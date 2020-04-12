@@ -1,7 +1,7 @@
 const Axios = require("axios").default;
 import { getNameFromId } from "./util";
 
-const API_KEY = `RGAPI-4a60071a-410e-4330-ac04-3ec70ec25b36`;
+const API_KEY = `RGAPI-d785e705-bc96-4178-9b86-f813b4c51412`;
 
 export default async (sumName, numMatches): Promise<object> => {
   //okay arguments are good

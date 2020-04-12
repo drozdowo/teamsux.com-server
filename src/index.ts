@@ -9,8 +9,14 @@ const port = 3001;
 app.use(cors());
 
 app.get("/checkPlayerSummary/:summonerName", async (req, res) => {
-  let results: object = await checkSum(req.params.summonerName, 15);
+  let results: object | void = await checkSum(
+    req.params.summonerName,
+    15
+  ).catch((err) => {
+    res.status(500).send(err);
+  });
   let extractStats = getStats(results);
+  extractStats["name"] = req.params.summonerName;
   res.send(extractStats);
 });
 
