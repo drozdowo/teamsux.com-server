@@ -1,8 +1,9 @@
 import { getNameFromId } from "./util";
 import axios from "axios";
 import rateLimit from "axios-rate-limit";
+import CONFIG from "../config.js";
 
-const API_KEY = `<snip>`;
+const API_KEY = CONFIG.API_KEY;
 
 export default async (sumName, numMatches): Promise<object> => {
   const axiosRL = rateLimit(axios.create(), {
